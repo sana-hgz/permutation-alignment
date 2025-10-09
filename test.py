@@ -6,8 +6,7 @@ from build_model import load_vgg16_cifar10
 import torch
 torch.cuda.empty_cache()
 from outils import evaluate , average_state_dicts, set_seed 
-from permutation3 import align_models_activations_batched, align_models_activations
-from permutation4 import align_models_simple_batched
+from permutation3 import  align_models_activations
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #device = torch.device("cpu")
 batch_size = 256
