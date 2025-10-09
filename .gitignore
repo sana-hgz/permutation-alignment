@@ -23,3 +23,4 @@ my_job_*.out
 my_job_*.err
 my_job_*.out
 my_job_*.err
+.ipynb_checkpoints/
