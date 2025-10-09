@@ -19,3 +19,5 @@ wandb/
 *.zip
 *.tar
 *.tgz
+my_job_*.out
+my_job_*.err
