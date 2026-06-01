@@ -45,31 +45,6 @@ cd permutation-alignment
 pip install -r requirements.txt
 ```
 
-## Usage
-
-### Basic Example
-
-```python
-from permutation_alignment import PermutationSolver
-import torch
-
-# Load two independently trained VGG models
-model1 = torch.hub.load('pytorch/vision:v0.10.0', 'vgg16', pretrained=True)
-model2 = torch.hub.load('pytorch/vision:v0.10.0', 'vgg16', pretrained=True)
-
-# Initialize the solver
-solver = PermutationSolver(source_model=model1, target_model=model2)
-
-# Compute alignment using activation matching
-permutation = solver.align(layer_names=['features.0', 'features.3', 'features.6'])
-
-# Apply permutation to align neurons
-aligned_model2 = solver.apply_permutation(model2, permutation)
-
-# Merge models
-merged_model = solver.merge_models(model1, aligned_model2)
-```
-
 ## Project Structure
 
 ```
