@@ -74,21 +74,28 @@ merged_model = solver.merge_models(model1, aligned_model2)
 
 ```
 permutation-alignment/
-├── README.md
-├── requirements.txt
-├── permutation_alignment/
-│   ├── __init__.py
-│   ├── solver.py           # Core permutation solver
-│   ├── transport.py        # EMD and optimal transport utilities
-│   ├── hooks.py            # PyTorch forward hooks for activation capture
-│   └── merger.py           # Model merging utilities
-├── examples/
-│   ├── align_vgg_models.py
-│   └── model_merging_demo.py
-└── tests/
-    ├── test_solver.py
-    └── test_alignment.py
+├── README.md                  # Project documentation
+├── build_model.py             # Model building utilities
+├── outils.py                  # General utility functions
+├── permutation.py             # Core permutation solver
+├── permutation3.py            # Extended permutation solver (v3)
+├── permutation4.py            # Extended permutation solver (v4)
+├── permute.py                 # Model permutation application
+├── transformation.py          # Neural network transformations
+├── train2.py                  # Training script
+├── test.py                    # Test and evaluation script
+├── job2.sh                    # Batch job submission script
+└── .gitignore                 # Git ignore file
 ```
+
+## Key Files
+
+- **permutation3.py / permutation4.py**: Main implementations of the alignment algorithm
+- **build_model.py**: Constructs VGG models for alignment
+- **train2.py**: Trains independent VGG models
+- **test.py**: Evaluates alignment quality and model merging results
+- **outils.py**: Utility functions including EMD computations and activation matching
+- **permute.py**: Applies discovered permutations to model weights
 
 ## Requirements
 
